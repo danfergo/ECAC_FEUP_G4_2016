@@ -1,3 +1,4 @@
+# something
 source(file.path("functions.R"))
 cliente <- read.csv(file=file.path("data", "client.csv"), sep=";")
 cliente[,"birth_number"] <- sapply(cliente[,"birth_number"],as.character)
