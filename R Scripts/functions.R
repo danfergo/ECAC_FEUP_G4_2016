@@ -22,7 +22,7 @@ createBarPlot <- function(name, legendPlaceX, legendPlaceY){
   legend(legendPlaceX, legendPlaceY, c("Value","NA","empty"), bty="n", fill=colours,  cex = 0.6)
 }
 
-#fun4---------------------------------------------------------------------------------------------------
+#fun3---------------------------------------------------------------------------------------------------
 #@param x = length of the data; data = data frame(account); currentYear = System variable(year)
 #@return value of account age if data is pre year 2000
 getAccountAge <- function(x, data, currentYear){
@@ -53,4 +53,14 @@ getClientGender <- function(x, data){
   tempGender <- c(tempGenderVect)
   tempGenderVect <- paste(tempGender, collapse = "")
   Gender <- if(tempGenderVect > 12) {"F"} else {"M"}
+}
+
+#fun6---------------------------------------------------------------------------------------------------
+#@param x = unique account ids in transaction; data = data frame(transactions)
+#@return for each unique id, get median value of amount and balance
+getTransactionMedianValues <- function(x, data){
+  temp_pay <- data[data[,2] == x,]
+  temp_tAmount <- median(temp_pay[,6])
+  temp_balance <- median(temp_pay[,7])
+  result <- matrix(c(x, temp_tAmount, temp_balance),  nrow = 1, ncol = 3)
 }

@@ -3,36 +3,36 @@
 
 #install packages
 
-#install.packages('caret')
-install.packages("psych")
-#install.packages("mice")
-#install.packages('Hmisc')#pag64 livro
-#install.packages("VIM")
-#install.packages("lattice")
-#install.packages("ggplot2")
-#install.packages("XLConnect")
-#install.packages("rJava")
-#install.packages("gdata")
-#install.packages("xlsx")
-#install.packages('rJava', .libPaths()[1])
-#install.packages("xlsxjars")
-#install.packages("gridBase")
-#install.packages("fpc", dependencies = TRUE) #DBSCAN
-#install.packages('compare')
-#install.packages('devtools')
-#devtools::install_github("kassambara/factoextra")
-#install.packages('cluster')
-#install.packages('ggdendro')
-#install.packages('DAAG') #cross validation
-#install.packages('rpart') #regression tree
-#install.packages('party') #ctree
-#install.packages('tree')
-#install.packages('DMwR')
-#install.packages('randomForest')
-#install.packages('gbm')
-#install.packages('pROC')
-#install.packages('arules')
-#install.packages('arulesViz')
+# install.packages('caret')
+# install.packages("psych")
+# install.packages("mice")
+# install.packages('Hmisc')#pag64 livro
+# install.packages("VIM")
+# install.packages("lattice")
+# install.packages("ggplot2")
+# install.packages("XLConnect")
+# install.packages("rJava")
+# install.packages("gdata")
+# install.packages("xlsx")
+# install.packages('rJava', .libPaths()[1])
+# install.packages("xlsxjars")
+# install.packages("gridBase")
+# install.packages("fpc", dependencies = TRUE) #DBSCAN
+# install.packages('compare')
+# install.packages('devtools')
+# devtools::install_github("kassambara/factoextra")
+# install.packages('cluster')
+# install.packages('ggdendro')
+# install.packages('DAAG') #cross validation
+# install.packages('rpart') #regression tree
+# install.packages('party') #ctree
+# install.packages('tree')
+# install.packages('DMwR')
+# install.packages('randomForest')
+# install.packages('gbm')
+# install.packages('pROC')
+# install.packages('arules')
+# install.packages('arulesViz')
 #-------------------------------
 #Load libs
 #
