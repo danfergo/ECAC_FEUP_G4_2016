@@ -115,3 +115,5 @@ temp <- merge(temp, means, by = "account_id", all.x = TRUE)
 #---------------------------------------------------------------------------------------
 #trim de variaveis não interessantes
 #temp <- subset(temp, select = -c(account_id, client_id))
+
+final <- na.omit(temp)
