@@ -1,10 +1,10 @@
 #fun1---------------------------------------------------------------------------------------------------
 #@param x = length of the data; data = data frame
 #@return prints missing values and outputs data frame to target variable
-printEmptyVal <- function(x, data){
+printStats <- function(x, data){
   missNA<-sum(is.na(data[,x]))
   missVoid<-sum(data[,x] == "" & !is.na(data[,x])) #if data[,x] == "" -> returns NA
-  cat(sprintf("\n---%s---\nNA count: %d --> %.2f%%\nVoid count: %d --> %.2f%%\n",
+  cat(sprintf("\n---%s---\nNA count: %d --> %.2f%%\nEmpty count: %d --> %.2f%%\n",
               names(data)[x], missNA, 100*missNA/nrow(data), missVoid, 100*missVoid/nrow(data)))
   
   tempMatrix <- matrix(c(nrow(data)-missNA-missVoid, missNA, missVoid), nrow = 3, ncol = 1)
@@ -13,13 +13,13 @@ printEmptyVal <- function(x, data){
 #fun2---------------------------------------------------------------------------------------------------
 #@param name = name of the myBarMatrix data; legendPlaceX, legendPlaceY = coordinates for x or label
 #@return prints missing values and outputs data frame to target variable
-createBarPlot <- function(name, legendPlaceX, legendPlaceY){
+createPlot <- function(name, legendPlaceX, legendPlaceY){
   #make histogram
-  colours <- c("red", "orange", "blue")
-  bplot <- barplot(myBarMatrix, main=name, ylab = "Count", 
+  colours <- c("red", "yellow", "blue")
+  bplot <- barplot(stats, main=name, ylab = "Count", 
                    beside=TRUE, col=colours, las = 3,font.lab = 1, cex.lab = 0.8, cex.names = 0.7, bty='L')
   par(xpd=TRUE)
-  legend(legendPlaceX, legendPlaceY, c("Value","NA","empty"), bty="n", fill=colours,  cex = 0.6)
+  legend(legendPlaceX, legendPlaceY, c("Value","NA","Empty"), bty="n", fill=colours,  cex = 0.6)
 }
 
 #fun3---------------------------------------------------------------------------------------------------
@@ -53,14 +53,4 @@ getClientGender <- function(x, data){
   tempGender <- c(tempGenderVect)
   tempGenderVect <- paste(tempGender, collapse = "")
   Gender <- if(tempGenderVect > 12) {"F"} else {"M"}
-}
-
-#fun6---------------------------------------------------------------------------------------------------
-#@param x = unique account ids in transaction; data = data frame(transactions)
-#@return for each unique id, get median value of amount and balance
-getTransactionMedianValues <- function(x, data){
-  temp_pay <- data[data[,2] == x,]
-  temp_tAmount <- median(temp_pay[,6])
-  temp_balance <- median(temp_pay[,7])
-  result <- matrix(c(x, temp_tAmount, temp_balance),  nrow = 1, ncol = 3)
 }

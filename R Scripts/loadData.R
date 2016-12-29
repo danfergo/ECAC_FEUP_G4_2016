@@ -16,6 +16,8 @@ cat("district done\n")
 transactions <- read.csv("~/ECAC_FEUP_G4_2016/data/trans_train.csv", sep=";")
 cat("transactions done\n")
 
+
+
 summary(account)
 describe(account)
 str(account)
